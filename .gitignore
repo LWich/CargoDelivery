@@ -1,0 +1,9 @@
+.env
+/node_modules
+docker-compose-*.yml
+/dist
+/build
+/.vscode
+.idea
+test.js
+package-lock.json

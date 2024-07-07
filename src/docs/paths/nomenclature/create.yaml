@@ -1,0 +1,32 @@
+post:
+  summary: Creates a new nomenclature
+  operationId: createNomenclature
+  tags:
+    - Nomenclature
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              description: Name of the nomenclature
+            measure_id:
+              type: integer
+              format: int64
+              description:  Id of measure of nomenclature
+  responses:
+    '201':
+      description: Nomenclature created successfully
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/shipping.yaml#/components/schemas/Nomenclature'
+    '400':
+      description: Validation error or missing name
+    '404':
+      description: Measure not found
+    '500':
+      description: Error creating new nomenclature

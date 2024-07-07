@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgis/postgis:14-3.4
+    ports:
+      - "5432:5432"
+    volumes:
+      - data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=95244327
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+volumes:
+  data: {}

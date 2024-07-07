@@ -1,0 +1,30 @@
+parameters:
+  LimitQueryParam:
+    in: query
+    name: limit
+    required: false
+    description: The number of items to return at one time.
+    schema:
+      type: integer
+      default: 10
+      minimum: 1
+
+  OffsetQueryParam:
+    in: query
+    name: offset
+    required: false
+    description: The number of items to skip before starting to collect the result set.
+    schema:
+      type: integer
+      default: 0
+      minimum: 0
+
+  StatusQueryParam:
+    in: query
+    name: status
+    required: false
+    description: The field to sort by status.
+    schema:
+      type: string
+      default: all
+      enum: [confirmation, inwork, available, completed, cancelled, all]
